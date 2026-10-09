@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>بانگ — ئەپەکە داونلۆد بکە</title>
   <meta name="description"
     content="ئەپڵیکەیشنی بانگ — کاتی نوێژ بۆ شارەکانی کوردستان. لە ئەپ ستۆر و گووگڵ پلەی داونلۆد بکە." />
@@ -61,16 +61,21 @@
     }
 
     html {
-      scroll-behavior: smooth;
+      height: 100%;
+      overflow: hidden;
     }
 
     body {
       font-family: "Unikurd Goran", sans-serif;
       background: var(--bg-0);
       color: var(--text-1);
-      min-height: 100vh;
-      line-height: 1.6;
-      overflow-x: hidden;
+      height: 100%;
+      min-height: 100dvh;
+      max-height: 100dvh;
+      line-height: 1.5;
+      overflow: hidden;
+      overscroll-behavior: none;
+      -webkit-overflow-scrolling: auto;
     }
 
     /* ── Layered Islamic naksh (geometric) ── */
@@ -305,23 +310,34 @@
       }
     }
 
-    /* ── Main layout ── */
+    /* ── Main layout (single screen, no scroll) ── */
     .page {
       position: relative;
       z-index: 3;
-      min-height: 100vh;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 440px;
+      height: 100dvh;
+      max-height: 100dvh;
+      margin: 0 auto;
+      padding:
+        max(10px, env(safe-area-inset-top))
+        max(16px, env(safe-area-inset-right))
+        max(10px, env(safe-area-inset-bottom))
+        max(16px, env(safe-area-inset-left));
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 100px 20px 56px;
-      max-width: 440px;
-      margin: 0 auto;
+      overflow: hidden;
     }
 
     .card {
       width: 100%;
-      padding: 32px 24px 28px;
+      max-height: 100%;
+      flex: 0 1 auto;
+      min-height: 0;
+      padding: clamp(14px, 2.8vh, 28px) clamp(16px, 4vw, 24px) clamp(14px, 2.5vh, 24px);
       text-align: center;
       background: var(--bg-glass);
       border: 1px solid rgba(245, 200, 66, 0.12);
@@ -333,6 +349,7 @@
       -webkit-backdrop-filter: blur(16px);
       position: relative;
       overflow: hidden;
+      transform-origin: center center;
     }
 
     .card::before {
@@ -348,30 +365,30 @@
     }
 
     .logo-wrap {
-      margin: 4px auto 22px;
+      margin: 0 auto clamp(8px, 1.8vh, 18px);
       width: fit-content;
     }
 
     .logo-wrap img,
     .logo-wrap picture {
-      width: 108px;
-      height: 108px;
-      border-radius: 26px;
+      width: clamp(72px, 22vmin, 108px);
+      height: clamp(72px, 22vmin, 108px);
+      border-radius: clamp(18px, 5vmin, 26px);
       display: block;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
     }
 
     .app-title {
       text-align: center;
-      margin: 30px auto 15px;
+      margin: 0 auto clamp(4px, 1vh, 12px);
       width: 100%;
     }
 
     .app-title .name-nizar {
       display: block;
       font-family: "Nizar Nastaliq Kurdish", serif;
-      font-size: clamp(3rem, 14vw, 4rem);
-      line-height: 1.15;
+      font-size: clamp(2.25rem, 10vmin, 3.75rem);
+      line-height: 1.1;
       color: var(--gold-light);
       text-shadow: 0 0 28px rgba(245, 200, 66, 0.25);
       text-align: center;
@@ -384,32 +401,32 @@
 
     h1 .sub {
       display: block;
-      font-size: 1.1rem;
+      font-size: clamp(0.9rem, 3.2vmin, 1.1rem);
       font-weight: 600;
       color: rgba(230, 237, 243, 0.9);
-      margin-top: 4px;
-      line-height: 1.55;
+      margin-top: 2px;
+      line-height: 1.4;
       text-align: center;
     }
 
     .tagline {
       text-align: center;
       color: var(--text-2);
-      font-size: 1rem;
-      margin-bottom: 20px;
-      line-height: 1.7;
+      font-size: clamp(0.82rem, 2.8vmin, 1rem);
+      margin-bottom: clamp(8px, 1.6vh, 16px);
+      line-height: 1.45;
     }
 
     .chips {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 8px;
-      margin-bottom: 26px;
+      gap: 6px;
+      margin-bottom: clamp(10px, 2vh, 20px);
     }
 
     .chip {
-      font-size: 0.7rem;
+      font-size: clamp(0.62rem, 2.2vmin, 0.7rem);
       font-weight: 600;
       letter-spacing: 0.04em;
       padding: 6px 12px;
@@ -423,7 +440,7 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: clamp(8px, 1.6vh, 12px);
     }
 
     /* ── Premium store buttons ── */
@@ -433,7 +450,7 @@
       align-items: center;
       gap: 16px;
       width: 100%;
-      padding: 14px 18px 14px 16px;
+      padding: clamp(10px, 1.8vh, 14px) clamp(14px, 3vw, 18px);
       border-radius: var(--radius-md);
       text-decoration: none;
       color: var(--text-1);
@@ -589,7 +606,7 @@
 
     .store-title {
       display: block;
-      font-size: 1.15rem;
+      font-size: clamp(1rem, 3.5vmin, 1.15rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       line-height: 1.2;
@@ -685,6 +702,76 @@
 
       body::after {
         display: none;
+      }
+    }
+
+    /* Short viewports: scale card so nothing scrolls */
+    @media (max-height: 740px) {
+      .lantern-row {
+        height: 140px;
+        opacity: 0.85;
+      }
+
+      .lantern-svg {
+        width: 32px;
+      }
+
+      .chain,
+      .chain.long {
+        height: 18px;
+      }
+
+      .card {
+        transform: scale(0.96);
+      }
+    }
+
+    @media (max-height: 660px) {
+      .lantern-row {
+        height: 100px;
+      }
+
+      .lantern-unit:nth-child(1),
+      .lantern-unit:nth-child(5) {
+        display: none;
+      }
+
+      .card {
+        transform: scale(0.9);
+      }
+    }
+
+    @media (max-height: 580px) {
+      .lantern-row {
+        display: none;
+      }
+
+      .card {
+        transform: scale(0.84);
+      }
+    }
+
+    @media (max-height: 500px) {
+      .chips {
+        display: none;
+      }
+
+      .tagline {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .card {
+        transform: scale(0.78);
+      }
+    }
+
+    @media (min-width: 520px) and (min-height: 900px) {
+      .page {
+        max-width: 460px;
       }
     }
 
