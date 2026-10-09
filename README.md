@@ -16,7 +16,7 @@
 **بانگ** (Bang) is a prayer times app built for Kurdistan.
 This repository is the **open data layer** behind it — accurate, city-level Islamic prayer schedules for every day of the year.
 
-**[🌐 Live Demo](https://bang-kurdistan.github.io/)** · **[📥 Download Data](#downloads)** · **[🐛 Report Issue](https://github.com/Bang-Kurdistan/kurdistan-prayer-times/issues)**
+**[🌐 Live Demo](https://bang-kurdistan.github.io/)** · **[🔗 App links](https://bang-kurdistan.github.io/links/)** · **[📥 Download Data](#downloads)** · **[🐛 Report Issue](https://github.com/Bang-Kurdistan/kurdistan-prayer-times/issues)**
 
 <br />
 

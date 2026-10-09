@@ -22,3 +22,5 @@ __pycache__/
 *.tmp
 *.bak
 *.log
+
+/private-analytics/

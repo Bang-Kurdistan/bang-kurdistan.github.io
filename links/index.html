@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>بانگ — ئەپەکە داونلۆد بکە</title>
+  <meta name="description"
+    content="ئەپڵیکەیشنی بانگ — کاتی نوێژ بۆ شارەکانی کوردستان. لە ئەپ ستۆر و گووگڵ پلەی داونلۆد بکە." />
+  <link rel="canonical" href="https://bang-kurdistan.github.io/links/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bang-kurdistan.github.io/links/" />
+  <meta property="og:title" content="بانگ — ئەپەکە داونلۆد بکە" />
+  <meta property="og:description" content="کاتی نوێژ بۆ شارەکانی کوردستان. ئەپی بانگ لە ئەپ ستۆر و گووگڵ پلەی داونلۆد بکە." />
+  <meta property="og:image" content="https://bang-kurdistan.github.io/logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://bang-kurdistan.github.io/logo.png" />
+  <link rel="icon" type="image/png" href="../logo.png" />
+  <link rel="preconnect" href="https://bang-linktree.web.app" crossorigin />
+  <style>
+    @font-face {
+      font-family: "Nizar Nastaliq Kurdish";
+      src: url("fonts/NizarNastaliqKurdish.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Unikurd Goran";
+      src: url("fonts/UnikurdGoran.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-0: #05070d;
+      --bg-1: #0a0e18;
+      --bg-2: #121826;
+      --bg-glass: rgba(18, 24, 38, 0.72);
+      --border: rgba(255, 255, 255, 0.08);
+      --gold: #f5c842;
+      --gold-light: #ffe9a8;
+      --gold-dim: rgba(245, 200, 66, 0.2);
+      --emerald: #1a9d5c;
+      --green-glow: rgba(63, 185, 80, 0.35);
+      --text-1: #e6edf3;
+      --text-2: #8b949e;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --transition: 0.25s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Unikurd Goran", sans-serif;
+      background: var(--bg-0);
+      color: var(--text-1);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── Layered Islamic naksh (geometric) ── */
+    .naksh {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      contain: strict;
+    }
+
+    .naksh-layer {
+      position: absolute;
+      inset: -40%;
+      background-repeat: repeat;
+      opacity: 0.11;
+      will-change: transform;
+      transform: translateZ(0);
+    }
+
+    .naksh-layer.a {
+      background-image: url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f5c842' stroke-width='0.55'%3E%3Cpath d='M80 0 L160 80 L80 160 L0 80 Z'/%3E%3Cpath d='M80 24 L136 80 L80 136 L24 80 Z'/%3E%3Cpath d='M80 48 L112 80 L80 112 L48 80 Z'/%3E%3Ccircle cx='80' cy='80' r='10'/%3E%3C/g%3E%3C/svg%3E");
+      animation: nakshDriftA 90s linear infinite;
+    }
+
+    .naksh-layer.b {
+      background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c9a227' stroke-width='0.45' opacity='0.9'%3E%3Cpath d='M100 10 L190 100 L100 190 L10 100 Z'/%3E%3Cpath d='M100 40 L160 100 L100 160 L40 100 Z'/%3E%3Cpath d='M100 70 L130 100 L100 130 L70 100 Z'/%3E%3Cpath d='M100 0 L100 200 M0 100 L200 100 M29 29 L171 171 M171 29 L29 171'/%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.08;
+      animation: nakshDriftB 140s linear infinite reverse;
+    }
+
+    .naksh-layer.c {
+      background: radial-gradient(circle at 30% 20%, rgba(245, 200, 66, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 70% 80%, rgba(201, 162, 39, 0.06) 0%, transparent 40%);
+      inset: 0;
+      animation: nakshPulse 12s ease-in-out infinite;
+    }
+
+    @keyframes nakshDriftA {
+      from {
+        transform: rotate(0deg) scale(1);
+      }
+
+      to {
+        transform: rotate(360deg) scale(1.05);
+      }
+    }
+
+    @keyframes nakshDriftB {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+    @keyframes nakshPulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.65;
+      }
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(245, 200, 66, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(26, 157, 92, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg width='128' height='128' viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='1' fill='%23fff'/%3E%3Ccircle cx='52' cy='28' r='1' fill='%23fff'/%3E%3Ccircle cx='96' cy='8' r='1' fill='%23fff'/%3E%3Ccircle cx='28' cy='72' r='1' fill='%23fff'/%3E%3Ccircle cx='80' cy='64' r='1' fill='%23fff'/%3E%3Ccircle cx='112' cy='96' r='1' fill='%23fff'/%3E%3C/svg%3E");
+      background-size: 128px 128px;
+    }
+
+    /* ── Hanging lanterns ── */
+    .lantern-row {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      pointer-events: none;
+      z-index: 2;
+      display: flex;
+      justify-content: space-around;
+      padding: 0 4%;
+      contain: layout style;
+    }
+
+    .lantern-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform-origin: top center;
+      animation: lanternSway ease-in-out infinite;
+      will-change: transform;
+    }
+
+    .lantern-unit:nth-child(1) {
+      animation-duration: 4.2s;
+      animation-delay: 0s;
+      margin-top: -4px;
+    }
+
+    .lantern-unit:nth-child(2) {
+      animation-duration: 5.1s;
+      animation-delay: -1.2s;
+      margin-top: 12px;
+      transform: scale(1.15);
+    }
+
+    .lantern-unit:nth-child(3) {
+      animation-duration: 4.6s;
+      animation-delay: -0.5s;
+      margin-top: 0;
+    }
+
+    .lantern-unit:nth-child(4) {
+      animation-duration: 5.4s;
+      animation-delay: -2s;
+      margin-top: 18px;
+      transform: scale(0.9);
+    }
+
+    .lantern-unit:nth-child(5) {
+      animation-duration: 4.8s;
+      animation-delay: -1.8s;
+      margin-top: 6px;
+      transform: scale(1.05);
+    }
+
+    @keyframes lanternSway {
+
+      0%,
+      100% {
+        transform: rotate(-4deg);
+      }
+
+      50% {
+        transform: rotate(4deg);
+      }
+    }
+
+    .lantern-unit:nth-child(2) {
+      animation-name: lanternSway2;
+    }
+
+    .lantern-unit:nth-child(4) {
+      animation-name: lanternSway2;
+    }
+
+    @keyframes lanternSway2 {
+
+      0%,
+      100% {
+        transform: rotate(3deg) scale(var(--ls, 1));
+      }
+
+      50% {
+        transform: rotate(-5deg) scale(var(--ls, 1));
+      }
+    }
+
+    .lantern-unit:nth-child(2) {
+      --ls: 1.15;
+    }
+
+    .lantern-unit:nth-child(4) {
+      --ls: 0.9;
+    }
+
+    .lantern-unit:nth-child(5) {
+      --ls: 1.05;
+    }
+
+    .chain {
+      width: 2px;
+      height: 28px;
+      background: linear-gradient(180deg, transparent, rgba(245, 200, 66, 0.5));
+      border-radius: 1px;
+    }
+
+    .chain.long {
+      height: 42px;
+    }
+
+    .lantern-svg {
+      width: 44px;
+      height: auto;
+      filter: drop-shadow(0 0 12px rgba(245, 200, 66, 0.4));
+    }
+
+    .lantern-light {
+      width: 36px;
+      height: 20px;
+      margin-top: -4px;
+      background: radial-gradient(ellipse, rgba(255, 200, 100, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: lightPulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes lightPulse {
+
+      0%,
+      100% {
+        opacity: 0.6;
+        transform: scaleX(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scaleX(1.15);
+      }
+    }
+
+    /* ── Main layout ── */
+    .page {
+      position: relative;
+      z-index: 3;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 20px 56px;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .card {
+      width: 100%;
+      padding: 32px 24px 28px;
+      text-align: center;
+      background: var(--bg-glass);
+      border: 1px solid rgba(245, 200, 66, 0.12);
+      border-radius: var(--radius-lg);
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+        0 24px 64px rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.5;
+    }
+
+    .logo-wrap {
+      margin: 4px auto 22px;
+      width: fit-content;
+    }
+
+    .logo-wrap img,
+    .logo-wrap picture {
+      width: 108px;
+      height: 108px;
+      border-radius: 26px;
+      display: block;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .app-title {
+      text-align: center;
+      margin: 30px auto 15px;
+      width: 100%;
+    }
+
+    .app-title .name-nizar {
+      display: block;
+      font-family: "Nizar Nastaliq Kurdish", serif;
+      font-size: clamp(3rem, 14vw, 4rem);
+      line-height: 1.15;
+      color: var(--gold-light);
+      text-shadow: 0 0 28px rgba(245, 200, 66, 0.25);
+      text-align: center;
+    }
+
+    h1 {
+      text-align: center;
+      width: 100%;
+    }
+
+    h1 .sub {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: rgba(230, 237, 243, 0.9);
+      margin-top: 4px;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .tagline {
+      text-align: center;
+      color: var(--text-2);
+      font-size: 1rem;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 26px;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 6px 12px;
+      border-radius: 100px;
+      background: rgba(245, 200, 66, 0.08);
+      border: 1px solid rgba(245, 200, 66, 0.2);
+      color: var(--gold-light);
+    }
+
+    .links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* ── Premium store buttons ── */
+    .store-card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      padding: 14px 18px 14px 16px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: var(--text-1);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      border: 1px solid var(--border);
+    }
+
+    .store-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .store-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.08) 50%, transparent 60%);
+      transform: translateX(-120%);
+      transition: transform 0.6s ease;
+    }
+
+    .store-card:hover::after {
+      transform: translateX(120%);
+    }
+
+    .store-card:hover {
+      transform: translateY(-3px) scale(1.01);
+    }
+
+    .store-card.ios {
+      background:
+        linear-gradient(145deg, rgba(245, 200, 66, 0.14) 0%, transparent 42%),
+        linear-gradient(165deg, #1c1810 0%, #2a2318 38%, #15120c 100%);
+      border: 1px solid rgba(245, 200, 66, 0.42);
+      box-shadow:
+        0 12px 36px rgba(0, 0, 0, 0.55),
+        0 0 36px rgba(245, 200, 66, 0.14),
+        inset 0 1px 0 rgba(255, 233, 168, 0.35);
+    }
+
+    .store-card.ios::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.35;
+      background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f5c842' stroke-width='0.4'%3E%3Cpath d='M24 0 L48 24 L24 48 L0 24 Z'/%3E%3Cpath d='M24 8 L40 24 L24 40 L8 24 Z'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 36px 36px;
+      -webkit-mask-image: linear-gradient(135deg, #000 0%, transparent 70%);
+      mask-image: linear-gradient(135deg, #000 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .store-card.ios::after {
+      background: linear-gradient(105deg, transparent 38%, rgba(255, 233, 168, 0.22) 50%, transparent 62%);
+    }
+
+    .store-card.ios:hover {
+      border-color: rgba(255, 233, 168, 0.55);
+      box-shadow:
+        0 16px 44px rgba(0, 0, 0, 0.6),
+        0 0 48px rgba(245, 200, 66, 0.22),
+        inset 0 1px 0 rgba(255, 233, 168, 0.45);
+    }
+
+    .store-card.android {
+      background:
+        linear-gradient(120deg, #0d2818 0%, #1b4332 45%, #2d6a4f 100%);
+      border: 1px solid rgba(116, 198, 157, 0.4);
+      box-shadow:
+        0 12px 36px rgba(0, 0, 0, 0.45),
+        0 0 32px rgba(45, 106, 79, 0.25);
+    }
+
+    .store-card.android::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.32;
+      background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2395d5b2' stroke-width='0.4'%3E%3Cpath d='M24 0 L48 24 L24 48 L0 24 Z'/%3E%3Cpath d='M24 8 L40 24 L24 40 L8 24 Z'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 36px 36px;
+      -webkit-mask-image: linear-gradient(135deg, #000 0%, transparent 70%);
+      mask-image: linear-gradient(135deg, #000 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .store-card.android::after {
+      background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.1) 50%, transparent 60%);
+    }
+
+    .store-card.android:hover {
+      border-color: rgba(149, 213, 178, 0.55);
+      box-shadow:
+        0 16px 42px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(64, 145, 108, 0.3);
+    }
+
+    .store-icon-wrap {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border-radius: 12px;
+    }
+
+    .store-card.ios .store-icon-wrap {
+      background: rgba(245, 200, 66, 0.12);
+      border: 1px solid rgba(245, 200, 66, 0.28);
+      box-shadow: inset 0 0 20px rgba(245, 200, 66, 0.08);
+    }
+
+    .store-card.android .store-icon-wrap {
+      background: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    .store-icon-wrap img {
+      display: block;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    .store-card.ios .store-icon-wrap img {
+      width: 28px;
+      height: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .store-card.android .store-icon-wrap img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .store-copy {
+      flex: 1;
+      text-align: right;
+      min-width: 0;
+    }
+
+    .store-sub {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-2);
+      line-height: 1.3;
+    }
+
+    .store-title {
+      display: block;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-top: 2px;
+    }
+
+    .store-card.ios .store-sub {
+      color: var(--gold-light);
+      opacity: 0.9;
+    }
+
+    .store-card.ios .store-title {
+      color: #fff;
+      text-shadow: 0 0 24px rgba(245, 200, 66, 0.25);
+    }
+
+    .store-card.android .store-sub {
+      color: rgba(216, 243, 230, 0.85);
+    }
+
+    .store-card.android .store-title {
+      color: #fff;
+    }
+
+    .store-card.android .store-arrow {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .store-arrow {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.06);
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .store-card.ios .store-arrow {
+      color: var(--gold-light);
+      background: rgba(245, 200, 66, 0.12);
+      border: 1px solid rgba(245, 200, 66, 0.2);
+    }
+
+    .store-card.ios:hover .store-arrow {
+      transform: translateX(-3px);
+      background: rgba(245, 200, 66, 0.2);
+    }
+
+    .store-card.android:hover .store-arrow {
+      transform: translateX(-3px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .store-arrow svg {
+      width: 16px;
+      height: 16px;
+      opacity: 0.7;
+      transform: scaleX(-1);
+    }
+
+    @media (max-width: 768px) {
+      .naksh-layer.b {
+        display: none;
+      }
+
+      .naksh-layer.c {
+        animation: none;
+      }
+
+      .card {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .lantern-row {
+        padding: 0 2%;
+      }
+
+      .lantern-svg {
+        width: 36px;
+      }
+
+      .lantern-unit:nth-child(2),
+      .lantern-unit:nth-child(4) {
+        display: none;
+      }
+
+      body::after {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .geo-bg,
+      .lantern-unit,
+      .lantern-light,
+      .naksh-layer {
+        animation: none !important;
+      }
+
+      .naksh-layer,
+      .lantern-unit {
+        will-change: auto;
+      }
+
+      .store-card::after {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="naksh" aria-hidden="true">
+    <div class="naksh-layer a"></div>
+    <div class="naksh-layer b"></div>
+    <div class="naksh-layer c"></div>
+  </div>
+
+  <div class="lantern-row" aria-hidden="true">
+    <div class="lantern-unit">
+      <div class="chain"></div>
+      <svg class="lantern-svg" viewBox="0 0 48 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 4h4v6h-4V4z" fill="#8b7355" />
+        <ellipse cx="24" cy="14" rx="10" ry="3" fill="#c9a227" />
+        <path d="M14 16h20l-2 44H16L14 16z" fill="url(#lg1)" />
+        <path d="M16 58h16l-2 6H18l-2-6z" fill="#c9a227" />
+        <path d="M20 24h8v20h-8V24z" fill="rgba(255,220,120,0.35)" />
+        <defs>
+          <linearGradient id="lg1" x1="24" y1="16" x2="24" y2="58" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#e8b84a" />
+            <stop offset="1" stop-color="#a67c00" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="lantern-light"></div>
+    </div>
+    <div class="lantern-unit">
+      <div class="chain long"></div>
+      <svg class="lantern-svg" viewBox="0 0 48 72" fill="none">
+        <use href="#lantern-def" />
+      </svg>
+      <div class="lantern-light"></div>
+    </div>
+    <div class="lantern-unit">
+      <div class="chain"></div>
+      <svg class="lantern-svg" viewBox="0 0 48 72" fill="none">
+        <use href="#lantern-def" />
+      </svg>
+      <div class="lantern-light"></div>
+    </div>
+    <div class="lantern-unit">
+      <div class="chain long"></div>
+      <svg class="lantern-svg" viewBox="0 0 48 72" fill="none">
+        <use href="#lantern-def" />
+      </svg>
+      <div class="lantern-light"></div>
+    </div>
+    <div class="lantern-unit">
+      <div class="chain"></div>
+      <svg class="lantern-svg" viewBox="0 0 48 72" fill="none">
+        <use href="#lantern-def" />
+      </svg>
+      <div class="lantern-light"></div>
+    </div>
+  </div>
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+    <defs>
+      <symbol id="lantern-def" viewBox="0 0 48 72">
+        <path d="M22 4h4v6h-4V4z" fill="#8b7355" />
+        <ellipse cx="24" cy="14" rx="10" ry="3" fill="#c9a227" />
+        <path d="M14 16h20l-2 44H16L14 16z" fill="#d4a82a" />
+        <path d="M16 58h16l-2 6H18l-2-6z" fill="#c9a227" />
+        <path d="M20 24h8v20h-8V24z" fill="rgba(255,220,120,0.4)" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <main class="page">
+    <div class="card">
+      <div class="logo-wrap">
+        <picture>
+          <source srcset="logo-216.webp" type="image/webp" />
+          <img src="logo-216.png" width="108" height="108" alt="وێنۆچکەی ئەپی بانگ"
+            decoding="async" fetchpriority="high" />
+        </picture>
+      </div>
+
+      <div class="app-title">
+        <span class="name-nizar">بانگ</span>
+      </div>
+      <h1>
+        <span class="sub">کاتی نوێژەکانی کوردستان</span>
+      </h1>
+      <p class="tagline">
+        کاتەکانی بانگ بۆ سەرجەم شارەکانی هەرێمی کوردستان.
+      </p>
+
+      <div class="chips" aria-label="تایبەتمەندییەکان">
+        <span class="chip">٣٦ شار و شارۆچکە</span>
+        <span class="chip">متمانەپێکراو</span>
+      </div>
+
+      <nav class="links" aria-label="بەستەرەکانی داونلۆد">
+        <a id="link-android" class="store-card android"
+          href="https://play.google.com/store/apps/details?id=com.c4kurd.bang" rel="noopener">
+          <span class="store-icon-wrap">
+            <img src="../Google_Play_2022_icon.svg.webp" width="32" height="32" alt="" aria-hidden="true" />
+          </span>
+          <span class="store-copy">
+            <span class="store-sub">داونلۆد بکە لە</span>
+            <span class="store-title">گووگڵ پلەی</span>
+          </span>
+          <span class="store-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
+        </a>
+
+        <a id="link-ios" class="store-card ios"
+          href="https://apps.apple.com/us/app/bang-%D8%A8%D8%A7%D9%86%DA%AF/id627367343" rel="noopener">
+          <span class="store-icon-wrap">
+            <img src="../Apple_logo_black.svg" width="26" height="32" alt="" aria-hidden="true" />
+          </span>
+          <span class="store-copy">
+            <span class="store-sub">داونلۆد بکە لە</span>
+            <span class="store-title">ئەپ ستۆر</span>
+          </span>
+          <span class="store-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <script type="module">
+    import { trackPageView, bindTrackedLink } from "https://bang-linktree.web.app/bang-analytics.js";
+
+    trackPageView();
+    bindTrackedLink(document.getElementById("link-ios"), "ios");
+    bindTrackedLink(document.getElementById("link-android"), "android");
+  </script>
+</body>
+
+</html>
